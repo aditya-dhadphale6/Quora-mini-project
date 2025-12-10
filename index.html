@@ -2,75 +2,175 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Chapter2</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Quora Clone</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-        <h1>Quora 
-            <button id="login">Log in</button>
-            <button id="signup">Sign up</button>
-        </h1>
-        <div>
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/following">Following</a></li>
-                <li><a href="/answer">Answer</a></li>
-                <li><a href="/spaces">Spaces</a></li>
-            </ul>
-        </nav>
-        <hr>
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="logo">Quora</div>
+
+      <nav class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Following</a>
+        <a href="#">Answer</a>
+        <a href="#">Spaces</a>
+      </nav>
+
+      <input type="text" class="search" placeholder="Search Quora" />
+
+      <div class="auth">
+        <button class="btn small">Try Quora+</button>
+        <button class="btn outline">Log in</button>
+        <button class="btn fill">Sign up</button>
+      </div>
     </header>
-    <main>
-        <p>
-        Adam &nbsp;&nbsp;
-        <a class="follow" href="/adam">Follow /abc</a></span>
-        </p>
-        <h3>What is the highest salary for a spacex engineer?</h3>
-        <span>
-            <button class="upvote">+upvote</button>
-            <button>answer</button>
-        </span>
-        <hr />
 
-        <p>
-        Bob &nbsp;&nbsp;
-        <a class="follow" href="/bob">Follow xyz</a>
-        </p>
-        <h3>What is the syllabus for JEE 2024?</h3>
-        <span>
-            <button class="upvote">+upvote</button>
-            <button>answer</button>
-        </span>
-        <hr />
+    <!-- MAIN LAYOUT -->
+    <main class="container">
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Feeds</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Following</a></li>
+            <li><a href="#">Questions</a></li>
+            <li><a href="#">Spaces</a></li>
+          </ul>
+        </div>
 
-        <p>
-        Catlyn &nbsp;&nbsp;&nbsp;&nbsp;
-        <a class="follow" href="/catlyn">Follow pqr</a>
-        </p>
-        <h3>Why is the sky blue?</h3>
-        <span>
-            <button class="upvote">+upvote</button>
-            <button>answer</button>
-        </span>
-        <hr />
+        <div class="card">
+          <h3>Drafts</h3>
+          <p>No drafts yet.</p>
+        </div>
+      </aside>
 
-        <p>
-            Dan &nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="follow" href="/dan">Follow pqr</a>
-            </p>
-            <h3>Why is the sky blue?</h3>
-            <span>
-                <button class="upvote">+upvote</button>
-                <button>answer</button>
-            </span>
-            <hr />
+      <!-- CENTER FEED -->
+      <section class="feed">
+        <!-- Ask box -->
+        <div class="card">
+          <div class="ask-row">
+            <div class="avatar small">A</div>
+            <input
+              type="text"
+              class="ask-input"
+              placeholder="What do you want to ask or share?"
+            />
+          </div>
+          <div class="ask-buttons">
+            <button class="btn tiny">Ask</button>
+            <button class="btn tiny">Answer</button>
+            <button class="btn tiny">Post</button>
+          </div>
+        </div>
+
+        <!-- POST TEMPLATE 1 -->
+        <article class="card">
+          <div class="post-header">
+            <div class="avatar">A</div>
+            <div>
+              <div class="post-row">
+                <span class="author">Adam</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+              <span class="meta">SpaceX Engineer · 2h ago</span>
+            </div>
+          </div>
+          <h2 class="question">
+            What is the highest salary for a SpaceX engineer?
+          </h2>
+          <p class="text">
+            I’ve heard that compensation at SpaceX can be quite high for senior
+            roles. What does the salary range look like for different positions?
+          </p>
+          <div class="actions">
+            <button class="btn upvote">▲ Upvote</button>
+            <button class="btn tiny">Answer</button>
+            <button class="btn tiny">Share</button>
+          </div>
+        </article>
+
+        <!-- POST 2 -->
+        <article class="card">
+          <div class="post-header">
+            <div class="avatar">B</div>
+            <div>
+              <div class="post-row">
+                <span class="author">Bob</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+              <span class="meta">IIT Aspirant · 5h ago</span>
+            </div>
+          </div>
+          <h2 class="question">What is the syllabus for JEE 2024?</h2>
+          <p class="text">
+            Can someone provide a clear breakdown of Physics, Chemistry, and
+            Mathematics topics for JEE Main and Advanced?
+          </p>
+          <div class="actions">
+            <button class="btn upvote">▲ Upvote</button>
+            <button class="btn tiny">Answer</button>
+            <button class="btn tiny">Share</button>
+          </div>
+        </article>
+
+        <!-- POST 3 -->
+        <article class="card">
+          <div class="post-header">
+            <div class="avatar">C</div>
+            <div>
+              <div class="post-row">
+                <span class="author">Catlyn</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+              <span class="meta">Science Enthusiast · 1d ago</span>
+            </div>
+          </div>
+          <h2 class="question">Why is the sky blue?</h2>
+          <p class="text">
+            I understand it has something to do with light and the atmosphere,
+            but could someone explain it in simple terms?
+          </p>
+          <div class="actions">
+            <button class="btn upvote">▲ Upvote</button>
+            <button class="btn tiny">Answer</button>
+            <button class="btn tiny">Share</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Spaces to follow</h3>
+          <ul>
+            <li>
+              <strong>SpaceX & Rockets</strong><br /><span class="meta"
+                >50k followers</span
+              >
+            </li>
+            <li>
+              <strong>JEE Preparation</strong><br /><span class="meta"
+                >120k followers</span
+              >
+            </li>
+            <li>
+              <strong>Everyday Science</strong><br /><span class="meta"
+                >80k followers</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="card footer-card">
+          <a href="#">About</a> · <a href="#">Careers</a> ·
+          <a href="#">Terms</a> ·
+          <a href="#">Privacy</a>
+          <p class="meta">© 2025 Quora Clone</p>
+        </div>
+      </aside>
     </main>
   </body>
 </html>
